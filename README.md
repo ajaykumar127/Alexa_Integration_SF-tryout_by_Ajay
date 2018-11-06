@@ -94,7 +94,7 @@ We will use [Serveo](http://serveo.net) in our case because it needs nothing oth
 
 - In the VS Code `Terminal` window, click `+` to start a 2nd `Terminal` window
 - In the 2nd `Terminal` window, type `./run-serveo.sh` (or `./run-serveo.bat` for Windows)
-- This starts `ssh` and traffic from `https://sfmchackday2018.serveo.net` is proxied to your local server.
+- This starts `ssh` and traffic from `https://innovationday2018.serveo.net` is proxied to your local server.
 - `ssh` is happily running in this 2nd `Terminal` window. You can switch to other windows as usual
 
 ### Configure the endpoint for the Alexa skill
