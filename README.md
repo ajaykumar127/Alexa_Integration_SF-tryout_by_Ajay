@@ -51,7 +51,7 @@ The steps below are for MacOS. Modify as needed for your specific operating syst
 Open a `Terminal` window and type the commands below:
 ```bash
 $ cd ~
-$ git clone https://github.com/sanagama/sfmc-alexa.git
+$ git clone https://github.com/ajaykumar127/Alexa_Integration_SF-tryout_by_Ajay.git
 ```
 
 ### Install dependencies
@@ -77,8 +77,8 @@ We will use [Serveo](http://serveo.net) in our case because it needs nothing oth
 ### Here's how this works
 
 - When this prototype starts, it runs a local `Express` server on your computer
-- Run `ssh` on your local computer to expose `http://localhost:3000` as `https://sfmchackday2018.serveo.net` using `serveo`
-- Configure your Alexa skill to connect to `https://sfmchackday2018.serveo.net`
+- Run `ssh` on your local computer to expose `http://localhost:3000` as `https://innovationday2018.serveo.net` using `serveo`
+- Configure your Alexa skill to connect to `https://innovationday2018.serveo.net`
 - `serveo` proxies all Alexa requests to the `Express` server running on your computer
 - Your local `Express` server uses the same Lambda functions to satisfy Alexa intents
 - Life is good!
@@ -106,14 +106,6 @@ We will use [Serveo](http://serveo.net) in our case because it needs nothing oth
 $ npm run-script deploy
 ```
 
-Alternately, you can cionfigure the endpoint manually in the [Alexa Skills Kit Developer Console](https://developer.amazon.com/alexa/console/ask) if you wish:
-
-- Sign in to [your skill's dashboard](https://developer.amazon.com/alexa/console)
-- Select `Endpoint`
-- Select `HTTPS`
-- Under `Default Region` enter `https://sfmchackday2018.serveo.net`
-- For the `SSL certificate type` make sure you select `My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority`
-
 ### Start the local `Express` server
 
 - In the VS Code terminal window, switch back to the 1st terminal window
@@ -122,35 +114,3 @@ Alternately, you can cionfigure the endpoint manually in the [Alexa Skills Kit D
 ```bash
 $ npm start
 ```
-
-This will start the `Express` server locally on your computer. And `nodemon` will automatically transpile and deploy any files you change during development or debugging.
-
-## Overview of scripts in package.json
-
-To see the actual commands, check the file `package.json`.
-
-| Command | Description |
-| --- | --- |
-| `start` | Starts the local `Express` server locall using `nodemon`, so you can call your API endpoints on http://localhost:3000 |
-| `clean` | Deletes the `dist` folder |
-| `build` | Does `clean` and builds sources (Lambda & local `Express` server) and puts `js` files in the `dist` folder |
-| `deploy` | Does `build` and uses `ASK CLI` to deploy everything (skill, model, Lambda) to AWS |
-| `deploy:force` | Does `build` and uses `ASK CLI` to deploy everything (skill, model, Lambda) to AWS. Useful if you want to overwrite the model in AWS with your local model if they are different |
-| `deploy:lambda` | Does `build` and uses `ASK CLI` to deploy *only* the Lambda function AWS |
-
-## Useful resources
-
-- http://serveo.net/
-- https://ngrok.com/
-- https://alexa.amazon.com/
-- https://github.com/boobo94/alexa-skill-starter-pack-typescript
-- https://github.com/Xzya/alexa-typescript-hello-world
-- https://github.com/martinabrahams/alexa-ask-sdk-typescript-boilerplate/tree/master/src/handlers
-- https://medium.com/@cnadeau_/allow-alexa-to-run-your-locally-hosted-skill-1786e3ca7a1b
-- https://github.com/balassy/aws-lambda-typescript
-- https://ask-sdk-for-nodejs.readthedocs.io/en/latest/Developing-Your-First-Skill.html
-- https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs
-- https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html
-- https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html
-
-
